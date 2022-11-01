@@ -50,7 +50,7 @@ const (
 // +kubebuilder:resource:scope="Cluster"
 // +kubebuilder:printcolumn:name="Ready",type=string,JSONPath=".status.conditions[?(@.type == 'Ready')].status"
 // +kubebuilder:printcolumn:name="Version",type=string,JSONPath=".status.version"
-// +kubebuilder:printcolumn:name="APIServer",type=string,JSONPath=".spec.apiserver"
+// +kubebuilder:printcolumn:name="APIServer",type=string,JSONPath=".status.apiserver"
 // +kubebuilder:printcolumn:name="Validated",type=string,JSONPath=".status.conditions[?(@.type == 'Validated')].reason",priority=10
 // +kubebuilder:printcolumn:name="SynchroRunning",type=string,JSONPath=".status.conditions[?(@.type == 'SynchroRunning')].reason",priority=10
 // +kubebuilder:printcolumn:name="ClusterHealthy",type=string,JSONPath=".status.conditions[?(@.type == 'ClusterHealthy')].reason",priority=10
@@ -107,8 +107,10 @@ type ClusterGroupResources struct {
 }
 
 type ClusterStatus struct {
-	// +required
-	// +kubebuilder:validation:Required
+	// +optional
+	APIServer string `json:"apiserver,omitempty"`
+
+	// +optional
 	Version string `json:"version,omitempty"`
 
 	// +optional
