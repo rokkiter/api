@@ -4,6 +4,7 @@ Schema of the Clusterpedia API types that are served by the Kubernetes API serve
 
 ## Purpose
 
+
 This library is the canonical location of the Clusterpedia API definition. Most likely interaction with this repository is as a dependency of client-go, controller-runtime or OpenAPI client.
 
 It is published separately to provide clean dependency and public access for repos depending on it.
