@@ -30,3 +30,4 @@ We recommend using the go types in this repo. You may serialize them directly to
 4. git remote add origin https://github.com/clusterpedia-io/api.git
 5. git push origin main
 
+
