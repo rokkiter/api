@@ -29,3 +29,4 @@ We recommend using the go types in this repo. You may serialize them directly to
 3. git filter-repo --subdirectory-filter staging/src/github.com/clusterpedia-io/api --force
 4. git remote add origin https://github.com/clusterpedia-io/api.git
 5. git push origin main
+
